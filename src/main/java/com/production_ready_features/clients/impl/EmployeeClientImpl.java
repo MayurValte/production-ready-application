@@ -5,6 +5,8 @@ import com.production_ready_features.advice.ApiResponse;
 import com.production_ready_features.clients.EmployeeClient;
 import com.production_ready_features.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
@@ -20,6 +22,8 @@ public class EmployeeClientImpl implements EmployeeClient {
 
     private final RestClient restClient;
 
+    Logger logger= LoggerFactory.getLogger(EmployeeClientImpl.class);
+
     @Override
     public List<EmployeeDTO> getAllEmployee() {
         try {
@@ -33,11 +37,13 @@ public class EmployeeClientImpl implements EmployeeClient {
                     });*/
                     .toEntity(new ParameterizedTypeReference<>() {
                     });
+                    logger.info("Successfully get All Empoyees");
 
             HttpStatusCode statusCode = employees.getStatusCode();
             HttpHeaders headers = employees.getHeaders();
             return employees.getBody().getData();
         } catch (Exception e) {
+            logger.error("Something went wrong : ",e);
             throw new RuntimeException(e);
         }
 

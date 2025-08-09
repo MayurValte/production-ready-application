@@ -1,0 +1,56 @@
+2025-08-09 14:52:36.137 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - Starting ProductionReadyFeaturesApplicationTests using Java 21.0.8 with PID 1480 (started by mayur in C:\CodeBase\Coding Shuttle\Codes\production-ready-features)
+2025-08-09 14:52:36.137 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 14:52:37.126 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-09 14:52:37.221 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
+2025-08-09 14:52:38.059 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 14:52:38.139 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-09 14:52:38.187 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-09 14:52:38.679 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-09 14:52:38.727 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-09 14:52:38.949 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@591e5fd4
+2025-08-09 14:52:38.949 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-09 14:52:39.081 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-09 14:52:40.214 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-09 14:52:40.277 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-09 14:52:40.950 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 14:52:41.531 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - Started ProductionReadyFeaturesApplicationTests in 6.041 seconds (process running for 7.7)
+2025-08-09 14:52:42.196 [main] INFO  c.p.clients.impl.EmployeeClientImpl - Successfully get All Empoyees
+2025-08-09 14:52:42.196 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - [EmployeeDTO(id=2, name=Piyu, email=piyu@example.com, age=28, role=ADMIN, salary=53443.75, dateOfJoining=2024-08-09, isActive=true), EmployeeDTO(id=3, name=Mayur, email=mayur@example.com, age=28, role=ADMIN, salary=53443.75, dateOfJoining=2024-08-09, isActive=true), EmployeeDTO(id=52, name=Mayur, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=53, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=54, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=55, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=56, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=57, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true)]
+2025-08-09 14:52:42.227 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-09 14:52:42.227 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-09 14:52:42.245 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-09 14:58:55.854 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - Starting ProductionReadyFeaturesApplicationTests using Java 21.0.8 with PID 5832 (started by mayur in C:\CodeBase\Coding Shuttle\Codes\production-ready-features)
+2025-08-09 14:58:55.854 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 14:58:56.950 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-09 14:58:57.035 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
+2025-08-09 14:58:57.888 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 14:58:57.957 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-09 14:58:58.006 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-09 14:58:58.497 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-09 14:58:58.544 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-09 14:58:58.804 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54687fd0
+2025-08-09 14:58:58.804 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-09 14:58:58.954 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-09 14:58:59.973 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-09 14:59:00.021 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-09 14:59:00.703 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 14:59:01.242 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - Started ProductionReadyFeaturesApplicationTests in 6.117 seconds (process running for 7.717)
+2025-08-09 14:59:01.917 [main] INFO  c.p.clients.impl.EmployeeClientImpl - Successfully get All Empoyees
+2025-08-09 14:59:01.933 [main] INFO  c.p.ProductionReadyFeaturesApplicationTests - [EmployeeDTO(id=2, name=Piyu, email=piyu@example.com, age=28, role=ADMIN, salary=53443.75, dateOfJoining=2024-08-09, isActive=true), EmployeeDTO(id=3, name=Mayur, email=mayur@example.com, age=28, role=ADMIN, salary=53443.75, dateOfJoining=2024-08-09, isActive=true), EmployeeDTO(id=52, name=Mayur, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=53, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=54, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=55, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=56, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true), EmployeeDTO(id=57, name=MayurValte, email=MayurValte1999@gmail.com, age=25, role=ADMIN, salary=34332.21, dateOfJoining=2025-08-09, isActive=true)]
+2025-08-09 14:59:01.964 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-09 14:59:01.964 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-09 14:59:01.964 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
