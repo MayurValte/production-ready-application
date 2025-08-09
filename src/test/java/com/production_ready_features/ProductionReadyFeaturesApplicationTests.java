@@ -6,6 +6,8 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -19,12 +21,13 @@ class ProductionReadyFeaturesApplicationTests {
     @Autowired
     private EmployeeClient employeeClient;
 
+    Logger logger= LoggerFactory.getLogger(ProductionReadyFeaturesApplicationTests.class);
 
     @Test
 	@Order(3)
     public void getAllEmployees() {
         List<EmployeeDTO> allEmployee = employeeClient.getAllEmployee();
-        System.out.println(allEmployee);
+        logger.info(allEmployee.toString());
     }
 
     @Test
