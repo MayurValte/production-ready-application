@@ -1,4 +1,4 @@
-package com.production_ready_features.auth;
+package com.production_ready_features.audit;
 
 import org.springframework.data.domain.AuditorAware;
 

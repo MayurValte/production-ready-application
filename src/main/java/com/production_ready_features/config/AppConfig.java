@@ -1,6 +1,6 @@
 package com.production_ready_features.config;
 
-import com.production_ready_features.auth.AuditorAwareImpl;
+import com.production_ready_features.audit.AuditorAwareImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
