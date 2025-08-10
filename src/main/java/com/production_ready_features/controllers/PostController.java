@@ -13,22 +13,22 @@ import java.util.List;
 public class PostController {
     private final PostService postService;
 
-    @GetMapping
+    @GetMapping("/getAllPosts")
     public List<PostDTO> getAllPosts(){
         return postService.getAllPosts();
     }
 
-    @GetMapping("/{postId}")
+    @GetMapping("/getPostById/{postId}")
     public PostDTO getPostById(@PathVariable(name = "postId") Long postId){
         return postService.getPostById(postId);
     }
 
-    @PostMapping
+    @PostMapping("/createNewPost")
     public PostDTO createNewPost(@RequestBody PostDTO inputPost){
         return postService.createNewPost(inputPost);
     }
 
-    @PutMapping("{postId}")
+    @PutMapping("updatePost/{postId}")
     public PostDTO updatePost(@RequestBody PostDTO postDTO,@PathVariable(name = "postId") Long postId){
         return postService.updatePosts(postDTO,postId);
     }
