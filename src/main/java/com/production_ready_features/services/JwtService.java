@@ -28,25 +28,16 @@ public class JwtService {
                 .claim("email", user.getEmail())
                 .claim("roles", Set.of("ADMIN", "USER"))
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60))
+                .expiration(new Date(System.currentTimeMillis() + 1000L * 20))
                 .signWith(getSecretKey())
                 .compact();
-    }
-
-    public Long getUserIdFromToke(String token) {
-        Claims claims = Jwts.parser()
-                .verifyWith(getSecretKey())
-                .build()
-                .parseSignedClaims(token)
-                .getPayload();
-        return Long.valueOf(claims.getSubject());
     }
 
     public String generateRefreshToken(User user) {
         return Jwts.builder()
                 .subject(user.getId().toString())
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + 1000L * 60 * 60 * 24 * 30 * 6))
+                .expiration(new Date(System.currentTimeMillis() + 1000L * 60))
                 .signWith(getSecretKey())
                 .compact();
     }

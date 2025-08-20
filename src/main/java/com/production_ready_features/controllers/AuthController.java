@@ -50,8 +50,9 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) {
         LoginResponseDto tokenDto = authService.login(loginDTO);
-        Cookie cookie = new Cookie("JWT_TOKEN", tokenDto.getAccessToken());
+        Cookie cookie = new Cookie("refreshToken", tokenDto.getRefreshToken());
         cookie.setHttpOnly(true);
+        cookie.setSecure("production".equals(deployEnv));
         response.addCookie(cookie);
         return ResponseEntity.ok(tokenDto);
     }
