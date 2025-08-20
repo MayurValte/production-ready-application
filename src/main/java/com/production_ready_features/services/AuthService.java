@@ -1,6 +1,7 @@
 package com.production_ready_features.services;
 
 import com.production_ready_features.DTO.LoginDTO;
+import com.production_ready_features.DTO.LoginResponseDto;
 import com.production_ready_features.DTO.SignUpDTO;
 import com.production_ready_features.DTO.UserDTO;
 import com.production_ready_features.entities.User;
@@ -19,27 +20,28 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class AuthService {
-    private final ModelMapper modelMapper;
-    private final PasswordEncoder passwordEncoder;
-    private final UserRepository repository;
+
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
+    private final UserService userService;
 
-    public UserDTO signUp(SignUpDTO signUpDTO){
-        Optional<User> user = repository.findByEmail(signUpDTO.getEmail());
-        if(user.isPresent()){
-            throw new BadCredentialsException("User with email already exists "+signUpDTO.getEmail());
-        }
-        User toBeCreatedUser = modelMapper.map(signUpDTO, User.class);
-        toBeCreatedUser.setPassword(passwordEncoder.encode(toBeCreatedUser.getPassword()));
-        User savedUser = repository.save(toBeCreatedUser);
-        return modelMapper.map(savedUser, UserDTO.class);
+    public LoginResponseDto login(LoginDTO loginDto) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(loginDto.getEmail(), loginDto.getPassword())
+        );
+
+        User user = (User) authentication.getPrincipal();
+        String accessToken = jwtService.generateAccessToken(user);
+        String refreshToken = jwtService.generateRefreshToken(user);
+
+        return new LoginResponseDto(user.getId(), accessToken, refreshToken);
     }
 
-    public String login(LoginDTO loginDTO) {
-        Authentication authenticate = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
-        User user= (User) authenticate.getPrincipal();
-        return jwtService.generateToken(user);
+    public LoginResponseDto refreshToken(String refreshToken) {
+        Long userId = jwtService.getUserIdFromToken(refreshToken);
+        User user = userService.getUserById(userId);
+
+        String accessToken = jwtService.generateAccessToken(user);
+        return new LoginResponseDto(user.getId(), accessToken, refreshToken);
     }
 }
