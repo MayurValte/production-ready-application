@@ -2,6 +2,8 @@ package com.production_ready_features;
 
 import com.production_ready_features.DTO.EmployeeDTO;
 import com.production_ready_features.clients.EmployeeClient;
+import com.production_ready_features.entities.User;
+import com.production_ready_features.services.JwtService;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -20,6 +22,9 @@ class ProductionReadyFeaturesApplicationTests {
 
     @Autowired
     private EmployeeClient employeeClient;
+
+    @Autowired
+    private JwtService jwtService;
 
     Logger logger= LoggerFactory.getLogger(ProductionReadyFeaturesApplicationTests.class);
 
@@ -46,5 +51,15 @@ class ProductionReadyFeaturesApplicationTests {
 		System.out.println(savedEmployee);
 
 	}
+
+    @Test
+    public void testJwt(){
+        User user=new User(10L,"mayur@gmail.com","1234","Mayur");
+        String token = jwtService.generateAccessToken(user);
+        System.out.println(token);
+//        Long id = jwtService.getUserIdFromToke(token);
+//        System.out.println(id);
+
+    }
 
 }
