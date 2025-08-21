@@ -69,4 +69,14 @@ public class AuthController {
         return ResponseEntity.ok(loginResponseDto);
     }
 
+    @PostMapping("/logout")
+    public void logout(HttpServletRequest request){
+        String refreshToken = Arrays.stream(request.getCookies()).
+                filter(cookie -> "refreshToken".equals(cookie.getName()))
+                .findFirst()
+                .map(Cookie::getValue)
+                .orElseThrow(() -> new AuthenticationServiceException("Refresh token not found inside the Cookies"));
+        authService.logout(refreshToken);
+    }
+
 }

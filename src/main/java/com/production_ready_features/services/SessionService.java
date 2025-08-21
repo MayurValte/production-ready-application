@@ -39,4 +39,10 @@ public class SessionService {
         session.setLastUsedAt(LocalDateTime.now());
         sessionRepository.save(session);
     }
+
+    public void deleteSession(String refreshToken) {
+        Session session = sessionRepository.findByRefreshToken(refreshToken)
+                .orElseThrow(() -> new SessionAuthenticationException("Session not found for refreshToken: " + refreshToken));
+        sessionRepository.delete(session);
+    }
 }
