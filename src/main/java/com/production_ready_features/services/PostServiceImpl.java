@@ -2,10 +2,12 @@ package com.production_ready_features.services;
 
 import com.production_ready_features.DTO.PostDTO;
 import com.production_ready_features.entities.PostEntity;
+import com.production_ready_features.entities.User;
 import com.production_ready_features.exceptions.ResourceNotFoundException;
 import com.production_ready_features.repositories.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,7 +39,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDTO createNewPost(PostDTO postDTO) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         PostEntity postEntity = modelMapper.map(postDTO, PostEntity.class);
+        postEntity.setAuthor(user);
         return modelMapper.map(postRepository.save(postEntity), PostDTO.class);
     }
 

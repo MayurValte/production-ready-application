@@ -18,4 +18,7 @@ public class PostEntity extends AuditTableEntity {
     private Long id;
     private String title;
     private String description;
+
+    @ManyToOne
+    private User author;
 }

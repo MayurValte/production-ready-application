@@ -13,7 +13,7 @@ import static com.production_ready_features.entities.enums.Role.*;
 
 public class PermissionMapping {
     private static final Map<Role, Set<Permission>> map = Map.of(
-            USER, Set.of(USER_VIEW, POST_VIEW),
+            USER, Set.of(USER_VIEW, POST_VIEW,POST_CREATE),
             CREATOR, Set.of(POST_CREATE, USER_UPDATE, POST_UPDATE),
             ADMIN, Set.of(POST_CREATE, USER_UPDATE, POST_UPDATE, USER_DELETE, USER_CREATE, POST_DELETE)
     );

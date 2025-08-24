@@ -36,7 +36,8 @@ public class WebSecurityConfig {
         httpSecurity
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(publicRoutes).permitAll()
-                        .requestMatchers(HttpMethod.GET, "/posts/**").permitAll()
+                        .requestMatchers("/posts/**").authenticated()
+/*                        .requestMatchers(HttpMethod.GET, "/posts/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/posts/**")
                         .hasAnyRole(CREATOR.name(),ADMIN.name())
                         .requestMatchers(HttpMethod.POST, "/posts/**")
@@ -44,7 +45,7 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/posts/**")
                         .hasAuthority(POST_VIEW.name())
                         .requestMatchers(HttpMethod.PUT, "/posts/**").hasAuthority(POST_UPDATE.name())
-                        .requestMatchers(HttpMethod.DELETE, "/posts/**").hasAuthority(POST_DELETE.name())
+                        .requestMatchers(HttpMethod.DELETE, "/posts/**").hasAuthority(POST_DELETE.name())*/
                         .anyRequest().authenticated())
                 .csrf(csrfConfig -> csrfConfig.disable())
                 .sessionManagement(sessionConfig -> sessionConfig
