@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.production_ready_features.entities.enums.Permission;
 
 import java.util.Set;
 
@@ -17,4 +18,5 @@ public class SignUpDTO {
     private String password;
     private String name;
     private Set<Role> roles;
+    private Set<Permission> permissions;
 }

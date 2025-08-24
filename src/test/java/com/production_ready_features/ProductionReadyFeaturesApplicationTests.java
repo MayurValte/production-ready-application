@@ -54,9 +54,9 @@ class ProductionReadyFeaturesApplicationTests {
 
     @Test
     public void testJwt(){
-        User user=new User(10L,"mayur@gmail.com","1234","Mayur");
-        String token = jwtService.generateAccessToken(user);
-        System.out.println(token);
+//        User user=new User(10L,"mayur@gmail.com","1234","Mayur");
+//        String token = jwtService.generateAccessToken(user);
+//        System.out.println(token);
 //        Long id = jwtService.getUserIdFromToke(token);
 //        System.out.println(id);
 
